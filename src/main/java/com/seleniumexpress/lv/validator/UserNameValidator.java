@@ -17,12 +17,11 @@ public class UserNameValidator implements Validator {
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		// TODO Auto-generated method stub
-		// write custom validation logic
+		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "username.empty", "username cant be empty ");
 
 		String UserName = ((UserRegistrationDTO)target).getUsername();
-		System.out.println(UserName);//aha null print kr rea console uper
+		System.out.println(UserName);
 		if (!UserName.contains("_")) {
 			errors.rejectValue("username", "username.invalidString", "String must contain '_'");
 		}
