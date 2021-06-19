@@ -18,16 +18,9 @@ public class EmailController {
 	@Autowired
 	private LCAPPEmailServiceImpl imp;
 
-	// @RequestMapping("/sendEmail/{yourname}")
-
 	@RequestMapping("/sendEmail")
-
-	// public String sendEmail(@PathVariable("yourname") String
-	// yourname,@ModelAttribute("emailDTO")EmailDTO emailDTO,Model model)
-
 	public String sendEmail(Model model) {
 		model.addAttribute("emailDTO", new EmailDTO());
-		// model.addAttribute("yourname",yourname.toUpperCase());
 
 		return "send-email-page";
 	}
@@ -36,16 +29,8 @@ public class EmailController {
 	public String processEmail(@SessionAttribute("userInfo") UserInfoDTO dto,@ModelAttribute("emailDTO") EmailDTO emailDTO) {
 
 	
-	imp.sendEmail(dto.getYourname(),emailDTO.getUserEmail(),dto.getResult()); // we
-																		// will
-																		// create
-																		// LCAppEmailServiceinterface
-																		// and
-																		// the
-																		// calll
-																		// this
-																		// method
-		//and we use session attribute to get yourname
+	imp.sendEmail(dto.getYourname(),emailDTO.getUserEmail(),dto.getResult());
+		
 		return "process-email";
 
 	}
