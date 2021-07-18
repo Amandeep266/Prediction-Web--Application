@@ -50,10 +50,5 @@ registry.addFormatter(new PhoneNumberformatter() );
 
 }
 
-//@Override
-//public Validator getValidator() {
-//	// TODO Auto-generated method stub
-//	return WebMvcConfigurer.super.getValidator();
-//}
 }
 
