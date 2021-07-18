@@ -25,48 +25,12 @@ public class RegistrationController
 	public String showRegistrationPage( @ModelAttribute("userReg") UserRegistrationDTO dto)
 	{
 		
- //UserRegistrationDTO  dto=new UserRegistrationDTO();
-//	// model.addAttribute("userReg",dto);
-//	Phone phone=new Phone();
-//		phone.setCode("91");
-//		phone.setUserNumber("234567890");
-//		
-//		
-//	CommunicationDTO communicationDTO=new CommunicationDTO();
-////		//communicationDTO.setPhone(phone);
-//		dto.setCommunicatioDTO(communicationDTO);
-		
-//		
-		
-//		if(result.hasErrors())
-//		{
-//			System.out.println("has errors");
-//		List <ObjectError> l=result.getAllErrors();
-//		for(ObjectError temp:l)
-//		{
-//	System.out.println(temp);		
-//			
-//		
-//		}
-//		
-//
-//		return "home-page";}
-//		
-//		else
-//			
-//		{	
-		
-			//}
 		return "user-registration-page";
 	
 	}
 @RequestMapping("/registration-success")
 public String processUserRegistration(@Valid@ModelAttribute("userReg") UserRegistrationDTO dto,BindingResult result)
 {
-//{	CommunicationDTO communicationDTO=new CommunicationDTO();
-//////communicationDTO.setPhone(phone);
-//dto.setCommunicatioDTO(communicationDTO);
-//
 	if(result.hasErrors())
 	{
 		System.out.println("has errors");
@@ -84,10 +48,8 @@ public void initBinder(WebDataBinder binder)
 {
 StringTrimmerEditor editor=new StringTrimmerEditor(true);
 binder.registerCustomEditor(String.class, "name",editor);
-
-NamePropertyEditor nameEditor=new NamePropertyEditor();
+NamePropertyEditor nameEditor=new NamePropertyEditor();//custom editor
 binder.registerCustomEditor(String.class, "name",nameEditor);
-//UserNameValidator validator=new UserNameValidator();
 binder.addValidators(new UserNameValidator());
 binder.addValidators( new EmailValidator());
 
