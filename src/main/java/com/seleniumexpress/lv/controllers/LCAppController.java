@@ -32,7 +32,7 @@ private LCAppService lcservice;
 	public String showResultPage(Model model, @Valid UserInfoDTO dto, BindingResult result1)
 	{
 	
-		model.addAttribute("userInfo",dto);// since we aree handling model  object manually so spring will not senderrors to hoe page so we to handle that manuayy aslo
+		model.addAttribute("userInfo",dto);
 		model.addAttribute(BindingResult.MODEL_KEY_PREFIX+"userInfo",result1);
 
 		if (result1.hasErrors()) {
