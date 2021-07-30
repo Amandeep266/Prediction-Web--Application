@@ -3,7 +3,7 @@ package com.seleniumexpress.lv.validator;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class AgeValidator implements ConstraintValidator<Age, Integer> {//no need to use @componenet because spring will automatically detect this class because it is implementing constraint validator
+public class AgeValidator implements ConstraintValidator<Age, Integer> {
 
 private int upper,lower;	
 @Override
