@@ -19,7 +19,6 @@ return false;}
 
  else 
 {
-System.out.println("chl pda hai");
 return true;
 }
 
@@ -42,7 +41,7 @@ text-align:left;
 <div align="center">
 <p>
 <label for="yn"> Your Name :</label>
-<form:input type="text" id="yn" path="yourname"/> <!-- path help us binding userInfo attribute with this inpput field -->
+<form:input type="text" id="yn" path="yourname"/> 
 <form:errors path="yourname"  cssClass="error"></form:errors>
 </p>
 <p>
