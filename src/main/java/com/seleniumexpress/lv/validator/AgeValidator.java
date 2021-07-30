@@ -8,7 +8,7 @@ public class AgeValidator implements ConstraintValidator<Age, Integer> {
 private int upper,lower;	
 @Override
 	public void initialize(Age age) {
-	//i can write post construct work right here
+	
 		this.lower=age.lower();
 		this.upper=age.upper();
 
