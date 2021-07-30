@@ -11,7 +11,7 @@ public class UserNameValidator implements Validator {
 	@Override
 	public boolean supports(Class<?> clazz) {
 		// TODO Auto-generated method stub
-		// check if UsreNameValidator support given Object
+		
 		return UserRegistrationDTO.class.equals(clazz);
 	}
 
